@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Encabezado from './componentes/Encabezado/Encabezado';
+import Productos from './componentes/Productos/Productos';
+import Servicios from './componentes/Servicios/Servicios';
+import Contacto from './componentes/Contacto/Contacto';
+import PiePagina from './componentes/PiePagina/PiePagina';
 
 function App() {
+  const productos = [
+      { nombre: "ACETAMINOFÉN", precioAnterior: 2000, precioActual: 1500, imagen: "images/producto1.jpg" },
+      { nombre: "IBUPROFENO", precioAnterior: 2500, precioActual: 1800, imagen: "images/producto2.jpg" }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+          <Encabezado />
+          <Productos productos={productos} />
+          <Servicios />
+          <Contacto />
+          <PiePagina />
+      </div>
   );
 }
 
